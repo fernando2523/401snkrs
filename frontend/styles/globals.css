@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+/* .rdt_Table {
+  background-color: transparent !important;
+}
+
+.rdt_TableBody {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.rdt_TableHeadRow {
+  border-radius: 15px;
+}
+
+.rdt_TableCol_Sortable {
+  justify-content: center !important;
+}
+
+.rdt_TableCell {
+  justify-content: center !important;
+}
+
+.rdt_TableRow {
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: auto;
+} */
