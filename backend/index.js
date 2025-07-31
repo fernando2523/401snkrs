@@ -1,7 +1,7 @@
 require("dotenv").config();
 process.env.TZ = "Asia/Jakarta";
-// const PORT = process.env.PORT || 4000;
-const PORT = 9191;
+const PORT = process.env.PORT || 4000;
+// const PORT = 9191;
 const express = require("express");
 const cors = require("cors");
 
@@ -31,7 +31,7 @@ app.use("/v1", ProdukRoutes);
 app.use("/public/images", express.static("public/images"));
 
 app.get("/", (req, res) => {
-  res.send("This Is Page Api Loki");
+  res.send("This Is Page Api 401snkrs");
 });
 
 app.use((err, req, res, next) => {

@@ -83,7 +83,7 @@ export default function NotaBarang() {
         setisLoading(true);
         await axios({
             method: "post",
-            url: `https://api.epseugroup.com/v1/notabarang`,
+            url: `https://api.401snkrs.com/v1/notabarang`,
             data: {
                 Query: Query,
                 Store: Store,
@@ -105,7 +105,7 @@ export default function NotaBarang() {
     async function getbrand() {
         await axios({
             method: "get",
-            url: `https://api.epseugroup.com/v1/getbrand`,
+            url: `https://api.401snkrs.com/v1/getbrand`,
         })
             .then(function (response) {
                 setdatabrand(response.data.data_brand);
@@ -128,7 +128,7 @@ export default function NotaBarang() {
     async function getstore() {
         await axios({
             method: "get",
-            url: `https://api.epseugroup.com/v1/getstore`,
+            url: `https://api.401snkrs.com/v1/getstore`,
         })
             .then(function (response) {
                 setdatastore(response.data.data_store);
@@ -151,7 +151,7 @@ export default function NotaBarang() {
     async function getcategory() {
         await axios({
             method: "get",
-            url: `https://api.epseugroup.com/v1/getcategory`,
+            url: `https://api.401snkrs.com/v1/getcategory`,
         })
             .then(function (response) {
                 setdatacategory(response.data.data_category);
@@ -174,7 +174,7 @@ export default function NotaBarang() {
     async function getsupplier() {
         await axios({
             method: "get",
-            url: `https://api.epseugroup.com/v1/getsupplier`,
+            url: `https://api.401snkrs.com/v1/getsupplier`,
         })
             .then(function (response) {
                 setdatasupplier(response.data.data_supplier);
@@ -197,7 +197,7 @@ export default function NotaBarang() {
     async function getwarehouse() {
         await axios({
             method: "get",
-            url: `https://api.epseugroup.com/v1/getwarehouse`,
+            url: `https://api.401snkrs.com/v1/getwarehouse`,
         })
             .then(function (response) {
                 setdatawarehouse(response.data.data_warehouse);
@@ -233,7 +233,7 @@ export default function NotaBarang() {
     const [showModal, setShowModal] = React.useState(false);
 
     const onSubmit = async (data: any) => {
-        await axios.post("https://api.epseugroup.com/savenota", {
+        await axios.post("https://api.401snkrs.com/savenota", {
             data: data
         }).then(function (response) {
             // console.log(response.data);
@@ -276,7 +276,7 @@ export default function NotaBarang() {
     }
 
     async function deleteData() {
-        await axios.post("https://api.epseugroup.com/deleteNota", {
+        await axios.post("https://api.401snkrs.com/deleteNota", {
             id: iddel
         }).then(function (response) {
             // console.log(response.data);
@@ -498,7 +498,7 @@ export default function NotaBarang() {
     }
 
     async function update_payment_satuan(id: any) {
-        await axios.post(`https://api.epseugroup.com/editpaymentsatuan`, {
+        await axios.post(`https://api.401snkrs.com/editpaymentsatuan`, {
             id: id,
         }).then(function (response) {
             // console.log(response.data);
@@ -513,7 +513,7 @@ export default function NotaBarang() {
     }
 
     async function updatepayemnt_massal() {
-        await axios.post(`https://api.epseugroup.com/editpaymentmassal`, {
+        await axios.post(`https://api.401snkrs.com/editpaymentmassal`, {
             data: dataChecked,
         }, {
             headers: {
@@ -532,7 +532,7 @@ export default function NotaBarang() {
     }
 
     const onSubmitUpdate = async (data: any) => {
-        await axios.post(`https://api.epseugroup.com/editnota`, {
+        await axios.post(`https://api.401snkrs.com/editnota`, {
             id: id,
             edit_produk: edit_produk,
             edit_hargabeli: edit_hargabeli,

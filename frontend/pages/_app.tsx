@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
       <Layout>
         <Head>
-          <title>EPSEU</title>
-          <link rel="shortcut icon" href="/belum-dibayar.png" />
+          <title>401SNKRS</title>
+          <link rel="shortcut icon" href="/401ico.png" />
         </Head>
         <Component {...pageProps} />
       </Layout>

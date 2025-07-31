@@ -15,7 +15,7 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export default function AllOrder() {
     // format(new Date(2014, 1, 11), 'yyyy-MM-dd')
-    const { data, error, isLoading } = useSWR(`https://api.epseugroup.com/orders/0/10/all`, fetcher);
+    const { data, error, isLoading } = useSWR(`https://api.401snkrs.com/orders/0/10/all`, fetcher);
 
     const [date, setDate] = useState(format(new Date(), 'dd/MM/yyyy'));
     const [start, setStart] = useState(30);

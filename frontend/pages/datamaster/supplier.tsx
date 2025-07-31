@@ -31,7 +31,7 @@ export default function Warehouse() {
     setisLoading(true);
     await axios({
       method: "get",
-      url: `https://api.epseugroup.com/v1/getsupplier`,
+      url: `https://api.401snkrs.com/v1/getsupplier`,
     })
       .then(function (response) {
         setdatasupplier(response.data.data_supplier);
@@ -45,7 +45,7 @@ export default function Warehouse() {
 
   const onSubmit = async (data: any) => {
     await axios
-      .post("https://api.epseugroup.com/v1/addsupplier", data)
+      .post("https://api.401snkrs.com/v1/addsupplier", data)
       .then(function (response) {
         // console.log(response.data);
         loaddatasupplier();
@@ -71,7 +71,7 @@ export default function Warehouse() {
 
   const onSubmitUpdate = async (data: any) => {
     await axios
-      .post(`https://api.epseugroup.com/v1/editsupplier`, { data, id })
+      .post(`https://api.401snkrs.com/v1/editsupplier`, { data, id })
       .then(function (response) {
         // console.log(response.data);
         loaddatasupplier();
@@ -94,7 +94,7 @@ export default function Warehouse() {
 
   async function deleteData() {
     await axios
-      .post(`https://api.epseugroup.com/v1/deletesupplier`, { id })
+      .post(`https://api.401snkrs.com/v1/deletesupplier`, { id })
       .then(function (response) {
         // console.log(response.data);
         loaddatasupplier();
@@ -110,7 +110,7 @@ export default function Warehouse() {
   }
 
   // async function deleteData() {
-  //     await axios.post(`https://api.epseugroup.com/deletesupplier/${id}`)
+  //     await axios.post(`https://api.401snkrs.com/deletesupplier/${id}`)
   //         .then(function (response) {
   //             // console.log(response.data);
   //             // mutate();

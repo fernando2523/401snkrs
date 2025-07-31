@@ -38,7 +38,7 @@ export default function Area() {
     setisLoading(true);
     await axios({
       method: "get",
-      url: `https://api.epseugroup.com/v1/getarea`,
+      url: `https://api.401snkrs.com/v1/getarea`,
     })
       .then(function (response) {
         setdataarea(response.data.result);
@@ -52,7 +52,7 @@ export default function Area() {
 
   const onSubmit = async (data: any) => {
     await axios
-      .post("https://api.epseugroup.com/savearea", {
+      .post("https://api.401snkrs.com/savearea", {
         data: data,
       })
       .then(function (response) {
@@ -101,7 +101,7 @@ export default function Area() {
     var new_r_price = "Rp " + data.edit_r_price;
     var new_n_price = "Rp " + data.edit_n_price;
     await axios
-      .post(`https://api.epseugroup.com/v1/editarea`, { id, new_m_price, new_g_price, new_r_price, new_n_price })
+      .post(`https://api.401snkrs.com/v1/editarea`, { id, new_m_price, new_g_price, new_r_price, new_n_price })
       .then(function (response) {
         // console.log(response.data);
         loaddataarea();
@@ -290,7 +290,7 @@ export default function Area() {
 
   async function deleteData() {
     await axios
-      .post(`https://api.epseugroup.com/deletearea/${id}`)
+      .post(`https://api.401snkrs.com/deletearea/${id}`)
       .then(function (response) {
         // console.log(response.data);
         // mutate();

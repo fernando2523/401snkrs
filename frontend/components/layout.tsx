@@ -125,12 +125,12 @@ const Layout = (props: PropsWithChildren) => {
                 <div className="h-[38px] w-[175px]">
                     <Image
                         className="h-full pl-5"
-                        src="/epseu_long.png"
+                        src="/401_landscape.png"
                         alt="Picture of the author"
                         width={500}
                         height={500}
                         placeholder="blur"
-                        blurDataURL={'/epseu_long.png'}
+                        blurDataURL={'/401_landscape.png'}
                     />
                     {/* <span className='font-medium text-2xl text-black'>OFFICIAL KITA Apps</span> */}
                 </div>

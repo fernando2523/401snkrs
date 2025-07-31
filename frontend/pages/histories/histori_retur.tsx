@@ -34,7 +34,7 @@ export default function Refund() {
 
   async function getdatarefund(tanggal: any, Store: any, Role: any, area: any, Query: any, datechange: any) {
     await axios
-      .post("https://api.epseugroup.com/v1/getretur", {
+      .post("https://api.401snkrs.com/v1/getretur", {
         tanggal: tanggal,
         store: Store,
         role: Role,
@@ -73,7 +73,7 @@ export default function Refund() {
   async function getstore(Role: any, area: any) {
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getstoredisplay`,
+      url: `https://api.401snkrs.com/v1/getstoredisplay`,
       data: {
         role: Role,
         store: area,

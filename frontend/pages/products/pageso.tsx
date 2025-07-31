@@ -74,7 +74,7 @@ export default function PageSo() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getso`,
+      url: `https://api.401snkrs.com/v1/getso`,
       data: {
         query: query,
         date: tanggal,
@@ -144,7 +144,7 @@ export default function PageSo() {
       }
     }
   }
-  // const { data, error, isLoading, mutate } = useSWR(`https://api.epseugroup.com/get_so/${Query}/${date}`, fetcher);
+  // const { data, error, isLoading, mutate } = useSWR(`https://api.401snkrs.com/get_so/${Query}/${date}`, fetcher);
 
   const [openSize, setopenSize] = useState(null);
 
@@ -190,7 +190,7 @@ export default function PageSo() {
 
   async function alldeleteData() {
     await axios
-      .post(`https://api.epseugroup.com/v1/deletepo`, {
+      .post(`https://api.401snkrs.com/v1/deletepo`, {
         id_po: id_po,
       })
       .then(function (response) {
@@ -222,7 +222,7 @@ export default function PageSo() {
 
   async function deleteData() {
     await axios
-      .post(`https://api.epseugroup.com/v1/deleteitemso`, {
+      .post(`https://api.401snkrs.com/v1/deleteitemso`, {
         id_act: id_act,
         users: Name,
       })
@@ -268,7 +268,7 @@ export default function PageSo() {
     unregister("variasirestock");
 
     await axios
-      .post(`https://api.epseugroup.com/v1/get_sizepo`, {
+      .post(`https://api.401snkrs.com/v1/get_sizepo`, {
         id_act: id_act,
       })
       .then(function (response) {
@@ -284,7 +284,7 @@ export default function PageSo() {
     }
 
     await axios
-      .post(`https://api.epseugroup.com/v1/editstockopname`, {
+      .post(`https://api.401snkrs.com/v1/editstockopname`, {
         data: data,
         id_act: id_act,
         idpo: edit_idpo,

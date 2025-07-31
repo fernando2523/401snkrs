@@ -53,7 +53,7 @@ export default function MutasiStock() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getmutation`,
+      url: `https://api.401snkrs.com/v1/getmutation`,
       data: {
         date: date,
         user_login: user_login,
@@ -264,9 +264,9 @@ export default function MutasiStock() {
   const [user_login, setFilter_user_login] = useState(Cookies.get("auth_name"));
   const [user_role, setFilter_user_role] = useState(Cookies.get("auth_role"));
   const [user_store, setFilter_user_store] = useState(Cookies.get("auth_store"));
-  // const { data, error, mutate } = useSWR(`https://api.epseugroup.com/getmutation/${Store}/${date}`, fetcher);
+  // const { data, error, mutate } = useSWR(`https://api.401snkrs.com/getmutation/${Store}/${date}`, fetcher);
 
-  // const { data: store_data, error: store_error, isLoading: store_isLoading, mutate: store_mutate } = useSWR(`https://api.epseugroup.com/getstore`, fetcher);
+  // const { data: store_data, error: store_error, isLoading: store_isLoading, mutate: store_mutate } = useSWR(`https://api.401snkrs.com/getstore`, fetcher);
   // const list_store: any = [];
   // if (!store_isLoading && !store_error) {
   //     store_data.data_store.map((store: any, index: number) => {
@@ -505,7 +505,7 @@ export default function MutasiStock() {
   async function settlement_stock(live_stok: any) {
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/settlement_stock`,
+      url: `https://api.401snkrs.com/v1/settlement_stock`,
       data: {
         live_stok: live_stok,
       },
@@ -532,7 +532,7 @@ export default function MutasiStock() {
   }
 
   // async function settlement_stock() {
-  //     await axios.post(`https://api.epseugroup.com/v1/settlement_stock/${live_stok}`)
+  //     await axios.post(`https://api.401snkrs.com/v1/settlement_stock/${live_stok}`)
   //         .then(function (response) {
   //             console.log(response);
   //             // mutate();

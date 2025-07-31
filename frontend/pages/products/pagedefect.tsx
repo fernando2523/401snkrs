@@ -78,7 +78,7 @@ export default function PageSo() {
         setisLoading(true);
         await axios({
             method: "post",
-            url: `https://api.epseugroup.com/v1/getpodefect`,
+            url: `https://api.401snkrs.com/v1/getpodefect`,
             data: {
                 query: query,
                 date: tanggal,
@@ -105,7 +105,7 @@ export default function PageSo() {
         setisLoading(true);
         await axios({
             method: "post",
-            url: `https://api.epseugroup.com/v1/getusertransfer`,
+            url: `https://api.401snkrs.com/v1/getusertransfer`,
             data: {
                 user_login: user_login,
                 user_role: user_role,
@@ -141,7 +141,7 @@ export default function PageSo() {
         setisLoading(true);
         await axios({
             method: "post",
-            url: `https://api.epseugroup.com/v1/getwarehousetransfers`,
+            url: `https://api.401snkrs.com/v1/getwarehousetransfers`,
             data: {
                 date: date,
                 user_login: user_login,
@@ -268,7 +268,7 @@ export default function PageSo() {
 
     async function alldeleteData() {
         await axios
-            .post(`https://api.epseugroup.com/v1/deletepo`, {
+            .post(`https://api.401snkrs.com/v1/deletepo`, {
                 id_po: id_po,
             })
             .then(function (response) {
@@ -300,7 +300,7 @@ export default function PageSo() {
 
     async function deleteData() {
         await axios
-            .post(`https://api.epseugroup.com/v1/deleteitem`, {
+            .post(`https://api.401snkrs.com/v1/deleteitem`, {
                 id_act: id_act,
             })
             .then(function (response) {
@@ -349,7 +349,7 @@ export default function PageSo() {
         setValue("m_price", Rupiah.format(m_price));
         console.log(id_act)
         await axios
-            .post(`https://api.epseugroup.com/v1/get_sizepo`, {
+            .post(`https://api.401snkrs.com/v1/get_sizepo`, {
                 id_act: id_act,
             })
             .then(function (response) {
@@ -380,7 +380,7 @@ export default function PageSo() {
             });
         } else {
             await axios
-                .post(`https://api.epseugroup.com/v1/editpo`, {
+                .post(`https://api.401snkrs.com/v1/editpo`, {
                     data: data,
                     id_act: id_act,
                     idpo: edit_idpo,

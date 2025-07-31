@@ -87,7 +87,7 @@ export default function Shipping() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/order`,
+      url: `https://api.401snkrs.com/v1/order`,
       data: {
         status_pesanan: status_pesanan,
         query: query,
@@ -226,7 +226,7 @@ export default function Shipping() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getusersales`,
+      url: `https://api.401snkrs.com/v1/getusersales`,
       data: {
         user_login: user_login,
         user_role: user_role,
@@ -264,7 +264,7 @@ export default function Shipping() {
   async function getwarehouse(role: any, area: any) {
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/gudangretur`,
+      url: `https://api.401snkrs.com/v1/gudangretur`,
       data: {
         role: role,
         area: area,
@@ -293,7 +293,7 @@ export default function Shipping() {
   async function getstore(role: any, area: any) {
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getstore_sales_online`,
+      url: `https://api.401snkrs.com/v1/getstore_sales_online`,
       data: {
         role: role,
         store: area,
@@ -389,7 +389,7 @@ export default function Shipping() {
     } else {
       setreturLuarBTN(true);
       await axios
-        .post(`https://api.epseugroup.com/v1/returLuar`, {
+        .post(`https://api.401snkrs.com/v1/returLuar`, {
           LuarProduk: LuarProduk,
           LuarSize: LuarSize,
           LuarOldQty: LuarOldQty,
@@ -510,7 +510,7 @@ export default function Shipping() {
   //   //   setpilih_warehouse("close");
   //   // } else {
   //   await axios
-  //     .post(`https://api.epseugroup.com/v1/getsizeretur`, {
+  //     .post(`https://api.401snkrs.com/v1/getsizeretur`, {
   //       idware: id_ware,
   //       idproduct: id_produkretur,
   //       size: sizeretur,
@@ -588,7 +588,7 @@ export default function Shipping() {
     } else {
 
       await axios
-        .post(`https://api.epseugroup.com/v1/edithargamodalsales`, {
+        .post(`https://api.401snkrs.com/v1/edithargamodalsales`, {
           id_produk: edit_id_produk,
           id_ware: edit_id_ware,
           id_pesanan: edit_id_pesanan,
@@ -701,7 +701,7 @@ export default function Shipping() {
       // console.log(selisih)
       // console.log(Name)
       await axios
-        .post(`https://api.epseugroup.com/v1/tukermodel`, {
+        .post(`https://api.401snkrs.com/v1/tukermodel`, {
           idpo_old: returidpo,
           id_produk_old: id_produkretur,
           id_produk_new: TukerModelIDProduk,
@@ -752,7 +752,7 @@ export default function Shipping() {
     //   setpilih_warehouse("close");
     // } else {
     await axios
-      .post(`https://api.epseugroup.com/v1/getsizereturmodel`, {
+      .post(`https://api.401snkrs.com/v1/getsizereturmodel`, {
         idware: id_ware,
         idproduct: id_produk,
         size: sizeretur,
@@ -781,7 +781,7 @@ export default function Shipping() {
     id_ware: any
   ) {
     await axios
-      .post(`https://api.epseugroup.com/v1/cariwaresretur`, {
+      .post(`https://api.401snkrs.com/v1/cariwaresretur`, {
         id_ware: id_ware,
       })
       .then(function (response) {
@@ -797,7 +797,7 @@ export default function Shipping() {
     setReturware(id_ware);
 
     await axios
-      .post(`https://api.epseugroup.com/v1/getsizeretur`, {
+      .post(`https://api.401snkrs.com/v1/getsizeretur`, {
         idware: id_ware,
         idproduct: id_produk,
         size: size,
@@ -826,7 +826,7 @@ export default function Shipping() {
   async function sumbitRetur() {
     setIsDisabled(true);
     await axios
-      .post(`https://api.epseugroup.com/v1/retur`, {
+      .post(`https://api.401snkrs.com/v1/retur`, {
         id_pesanan: Id_pesanan,
         id_produk: id_produkretur,
         produk: produkretur,
@@ -887,7 +887,7 @@ export default function Shipping() {
   async function sumbitrefund() {
     setIsDisabled(true);
     await axios
-      .post(`https://api.epseugroup.com/v1/refund`, {
+      .post(`https://api.401snkrs.com/v1/refund`, {
         id_produk: id_produkretur,
         produk: addproduk_produk,
         size: addproduk_size,
@@ -941,7 +941,7 @@ export default function Shipping() {
   async function getsupplier() {
     await axios({
       method: "get",
-      url: `https://api.epseugroup.com/v1/getsupplier`,
+      url: `https://api.401snkrs.com/v1/getsupplier`,
     })
       .then(function (response) {
         setdatasupplier(response.data.data_supplier);
@@ -956,7 +956,7 @@ export default function Shipping() {
   //   error: supplier_error,
   //   isLoading: supplier_isLoading,
   //   mutate: supplier_mutate,
-  // } = useSWR(`https://api.epseugroup.com/getsupplier`, fetcher);
+  // } = useSWR(`https://api.401snkrs.com/getsupplier`, fetcher);
   const list_supplier: any = [];
   if (!isLoading) {
     data_supplier.map((area: any, index: number) => {
@@ -1312,7 +1312,7 @@ export default function Shipping() {
 
   async function updatePesanan(status: any) {
     await axios
-      .post(`https://api.epseugroup.com/v1/updatepesanan`, {
+      .post(`https://api.401snkrs.com/v1/updatepesanan`, {
         id_pesanan: id_pesanan,
         status,
       })
@@ -1333,7 +1333,7 @@ export default function Shipping() {
 
   async function deletePesanan() {
     await axios
-      .post(`https://api.epseugroup.com/v1/deletepesanan`, {
+      .post(`https://api.401snkrs.com/v1/deletepesanan`, {
         id_pesanan: id_pesanan,
         status: tabactive,
         users: Name,
@@ -1354,7 +1354,7 @@ export default function Shipping() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getproduktukarmodel`,
+      url: `https://api.401snkrs.com/v1/getproduktukarmodel`,
       data: {
         query: "all",
         id_ware: "all",
@@ -1383,7 +1383,7 @@ export default function Shipping() {
           <div className="flex gap-2 py-2 items-center">
             <Image
               className="rounded border w-[65px] h-auto p-2"
-              src={`https://api.epseugroup.com/public/images/${produk.img}`}
+              src={`https://api.401snkrs.com/public/images/${produk.img}`}
               alt="product-1"
               height="500"
               width="500"

@@ -20,7 +20,7 @@ export default function Print_so() {
   async function print_Stockopname() {
     await axios({
       method: "POST",
-      url: `https://api.epseugroup.com/v1/print_Stockopname`,
+      url: `https://api.401snkrs.com/v1/print_Stockopname`,
       data: {
         id_cust: id_ware,
       },

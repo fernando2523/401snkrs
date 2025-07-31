@@ -17,7 +17,7 @@ export default function Print_so() {
   async function print_Stockopname(id_ware: any) {
     await axios({
       method: "POST",
-      url: `https://api.epseugroup.com/v1/print_stockopname`,
+      url: `https://api.401snkrs.com/v1/print_stockopname`,
       data: {
         id_ware: id_ware,
       },

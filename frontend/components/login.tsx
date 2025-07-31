@@ -31,7 +31,7 @@ export default function Login() {
     setProcessLogin(true);
 
     await axios
-      .post("https://api.epseugroup.com/v1/login", {
+      .post("https://api.401snkrs.com/v1/login", {
         data: data,
       })
       .then(function (response) {
@@ -123,7 +123,7 @@ export default function Login() {
         setProcessLogin(true);
 
         await axios
-          .post("https://api.epseugroup.com/v1/login_on_enter", {
+          .post("https://api.401snkrs.com/v1/login_on_enter", {
             username: username,
             password: password,
           })
@@ -196,7 +196,7 @@ export default function Login() {
   return (
     <div className="bg-white h-screen w-screen flex items-center justify-center">
       <link rel="shortcut icon" href="/belum-dibayar.png" />
-      <title>Login | Epseu Official</title>
+      <title>Login | 401SNKRS Official</title>
 
       <ToastContainer className="mt-[50px]" />
 
@@ -204,14 +204,13 @@ export default function Login() {
         <div className="h-[175px] flex justify-center -mb-20">
           <Image
             className="w-auto h-[75px]  max-h-full mt-8"
-            src="/epseu_long.png"
+            src="/401_square.png"
             alt="Picture of the author"
             width={160}
             height={160}
             placeholder="blur"
-            blurDataURL={"/epseu_long.png"}
+            blurDataURL={"/401_square.png"}
           />
-          {/* <span className='font-medium text-2xl text-black'>OFFICIAL KITA Apps</span> */}
         </div>
 
         <div className="mb-4">

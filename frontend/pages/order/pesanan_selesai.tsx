@@ -27,7 +27,7 @@ export default function Shipping() {
 
     }
 
-    const { data, error, isLoading } = useSWR(`https://api.epseugroup.com/orders/0/10/SELESAI/${Query}`, fetcher);
+    const { data, error, isLoading } = useSWR(`https://api.401snkrs.com/orders/0/10/SELESAI/${Query}`, fetcher);
 
     const [date, setDate] = useState(format(new Date(), 'dd/MM/yyyy'));
     const [start, setStart] = useState(30);

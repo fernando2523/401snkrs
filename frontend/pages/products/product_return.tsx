@@ -72,9 +72,9 @@ export default function NotaBarang() {
         }
     }
 
-    const { data, error, isLoading, mutate } = useSWR(`https://api.epseugroup.com/get_notabarang_retur/${Query}/${Store}/${date}/${Filter_Supplier}/${Filter_Status}/${Filter_Payment}/${Size}`, fetcher);
+    const { data, error, isLoading, mutate } = useSWR(`https://api.401snkrs.com/get_notabarang_retur/${Query}/${Store}/${date}/${Filter_Supplier}/${Filter_Status}/${Filter_Payment}/${Size}`, fetcher);
 
-    const { data: report_data, error: report_error, isLoading: report_isLoading, mutate: report_mutate } = useSWR(`https://api.epseugroup.com/get_nota_return/${Store}/${date}/${Filter_Supplier}/${Filter_Status}/${Filter_Payment}/${Size}`, fetcher);
+    const { data: report_data, error: report_error, isLoading: report_isLoading, mutate: report_mutate } = useSWR(`https://api.401snkrs.com/get_nota_return/${Store}/${date}/${Filter_Supplier}/${Filter_Status}/${Filter_Payment}/${Size}`, fetcher);
 
     if (!report_isLoading && !report_error) {
         var nota_paid = Rupiah.format(report_data.nota_paid);
@@ -84,7 +84,7 @@ export default function NotaBarang() {
     }
 
 
-    const { data: brand_data, error: brand_error, isLoading: brand_isLoading, mutate: brand_mutate } = useSWR(`https://api.epseugroup.com/getbrand`, fetcher);
+    const { data: brand_data, error: brand_error, isLoading: brand_isLoading, mutate: brand_mutate } = useSWR(`https://api.401snkrs.com/getbrand`, fetcher);
 
     const list_brand: any = [];
 
@@ -96,7 +96,7 @@ export default function NotaBarang() {
         })
     }
 
-    const { data: size_data, error: size_error, isLoading: size_isLoading, mutate: size_mutate } = useSWR(`https://api.epseugroup.com/getsizenota`, fetcher);
+    const { data: size_data, error: size_error, isLoading: size_isLoading, mutate: size_mutate } = useSWR(`https://api.401snkrs.com/getsizenota`, fetcher);
 
     const list_size: any = [];
 
@@ -108,7 +108,7 @@ export default function NotaBarang() {
         })
     }
 
-    const { data: store_data, error: store_error, isLoading: store_isLoading } = useSWR(`https://api.epseugroup.com/getstore`, fetcher);
+    const { data: store_data, error: store_error, isLoading: store_isLoading } = useSWR(`https://api.401snkrs.com/getstore`, fetcher);
     let list_store: any = [];
     if (!store_isLoading && !store_error) {
         store_data.data_store.map((store: any, index: number) => {
@@ -120,7 +120,7 @@ export default function NotaBarang() {
         var data_store: any = [];
     }
 
-    const { data: category_data, error: category_error, isLoading: category_isLoading, mutate: category_mutate } = useSWR(`https://api.epseugroup.com/getcategory`, fetcher);
+    const { data: category_data, error: category_error, isLoading: category_isLoading, mutate: category_mutate } = useSWR(`https://api.401snkrs.com/getcategory`, fetcher);
 
     const list_category: any = [];
 
@@ -132,7 +132,7 @@ export default function NotaBarang() {
         })
     }
 
-    const { data: supplier_data, error: supplier_error, isLoading: supplier_isLoading, mutate: supplier_mutate } = useSWR(`https://api.epseugroup.com/getsupplier`, fetcher);
+    const { data: supplier_data, error: supplier_error, isLoading: supplier_isLoading, mutate: supplier_mutate } = useSWR(`https://api.401snkrs.com/getsupplier`, fetcher);
 
     const list_supplier: any = [];
 
@@ -144,7 +144,7 @@ export default function NotaBarang() {
         })
     }
 
-    const { data: warehouse_data, error: warehouse_error, isLoading: warehouse_isLoading, mutate: warehouse_mutate } = useSWR(`https://api.epseugroup.com/getwarehouse`, fetcher);
+    const { data: warehouse_data, error: warehouse_error, isLoading: warehouse_isLoading, mutate: warehouse_mutate } = useSWR(`https://api.401snkrs.com/getwarehouse`, fetcher);
 
     const list_warehouse: any = [];
 
@@ -175,7 +175,7 @@ export default function NotaBarang() {
     const [showModal, setShowModal] = React.useState(false);
 
     const onSubmit = async (data: any) => {
-        await axios.post("https://api.epseugroup.com/savenota", {
+        await axios.post("https://api.401snkrs.com/savenota", {
             data: data
         }).then(function (response) {
             // console.log(response.data);
@@ -208,7 +208,7 @@ export default function NotaBarang() {
     };
 
     async function update_payment_satuan(id: any) {
-        await axios.post(`https://api.epseugroup.com/editpaymentsatuan`, {
+        await axios.post(`https://api.401snkrs.com/editpaymentsatuan`, {
             id: id,
         }).then(function (response) {
             // console.log(response.data);
@@ -224,7 +224,7 @@ export default function NotaBarang() {
     }
 
     async function updatepayemnt_massal() {
-        await axios.post(`https://api.epseugroup.com/editpaymentmassal`, {
+        await axios.post(`https://api.401snkrs.com/editpaymentmassal`, {
             data: dataChecked,
         }, {
             headers: {
@@ -255,7 +255,7 @@ export default function NotaBarang() {
     }
 
     async function deleteData() {
-        await axios.post("https://api.epseugroup.com/deleteNota", {
+        await axios.post("https://api.401snkrs.com/deleteNota", {
             id: iddel
         }).then(function (response) {
             // console.log(response.data);
@@ -478,7 +478,7 @@ export default function NotaBarang() {
     }
 
     const onSubmitUpdate = async (data: any) => {
-        await axios.post(`https://api.epseugroup.com/editnota`, {
+        await axios.post(`https://api.401snkrs.com/editnota`, {
             id: id,
             edit_produk: edit_produk,
             edit_hargabeli: edit_hargabeli,

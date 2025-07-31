@@ -34,7 +34,7 @@ export default function Expense() {
     setisLoading(true);
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getprodukbarcode`,
+      url: `https://api.401snkrs.com/v1/getprodukbarcode`,
       data: {
         warehouse: warehouse,
         area: area,
@@ -70,7 +70,7 @@ export default function Expense() {
   async function getwarehouse(role: any, area: any) {
     await axios({
       method: "post",
-      url: `https://api.epseugroup.com/v1/getarehousebarcode`,
+      url: `https://api.401snkrs.com/v1/getarehousebarcode`,
       data: {
         role: role,
         area: area,
@@ -85,7 +85,7 @@ export default function Expense() {
       });
   }
 
-  // const { data: warehouse_data, error: warehouse_error, isLoading: warehouse_isLoading, mutate: warehouse_mutate } = useSWR(`https://api.epseugroup.com/getwarehouse`, fetcher);
+  // const { data: warehouse_data, error: warehouse_error, isLoading: warehouse_isLoading, mutate: warehouse_mutate } = useSWR(`https://api.401snkrs.com/getwarehouse`, fetcher);
   const list_warehouse: any = [];
   if (!isLoading) {
     data_ware.map((area: any, index: number) => {
@@ -127,7 +127,7 @@ export default function Expense() {
 
   const list_produkbarcode: any = [];
 
-  // const { data, error, isLoading, mutate } = useSWR(`https://api.epseugroup.com/get_produkbarcode/${Warehouse}`, fetcher);
+  // const { data, error, isLoading, mutate } = useSWR(`https://api.401snkrs.com/get_produkbarcode/${Warehouse}`, fetcher);
 
   if (!isLoading) {
     data_produkbarcode.map((data_produkbarcode: any, index: number) => {
@@ -228,7 +228,7 @@ export default function Expense() {
       setpilih_warehouse("close");
     } else {
       await axios
-        .post(`https://api.epseugroup.com/v1/getsizebarcode`, {
+        .post(`https://api.401snkrs.com/v1/getsizebarcode`, {
           idware: PrintIDWare,
           idproduct: PrintIDProduk,
           idpo: e.target.value,
@@ -304,7 +304,7 @@ export default function Expense() {
     setstokReady(0);
 
     await axios
-      .post(`https://api.epseugroup.com/v1/getidpo`, {
+      .post(`https://api.401snkrs.com/v1/getidpo`, {
         idware: idware,
         idproduct: idproduk,
       })
@@ -351,7 +351,7 @@ export default function Expense() {
     // Print New Lravel Blob
 
     // window.open(
-    //   `https://api.epseugroup.com/printBarcode/${PrintProduk}/${PrintIDProduk}/${PrintIDWare}/${sizeSelected}/${stokReady}/${PrintIDPO}`,
+    //   `https://api.401snkrs.com/printBarcode/${PrintProduk}/${PrintIDProduk}/${PrintIDWare}/${sizeSelected}/${stokReady}/${PrintIDPO}`,
     //   "_blank"
     // );
   }

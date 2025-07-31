@@ -74,7 +74,7 @@ export default function Home() {
 
     async function loadlistbelanja(role: any) {
         setisLoading(true);
-        await axios.post(`https://api.epseugroup.com/v1/getlistbelanja`, { role })
+        await axios.post(`https://api.401snkrs.com/v1/getlistbelanja`, { role })
             .then(function (response) {
                 setdatalistbelanja(response.data.result.hasil);
                 settotalqty(response.data.result.totalqty);
@@ -92,7 +92,7 @@ export default function Home() {
 
     async function getparameter() {
         try {
-            const response = await axios.get(`https://api.epseugroup.com/v1/getparameter`);
+            const response = await axios.get(`https://api.401snkrs.com/v1/getparameter`);
             setdataparameter(response.data.result);
         } catch (error) {
             console.log(error);
@@ -101,7 +101,7 @@ export default function Home() {
 
     async function getsupplier() {
         try {
-            const response = await axios.get(`https://api.epseugroup.com/v1/getsupplier`);
+            const response = await axios.get(`https://api.401snkrs.com/v1/getsupplier`);
             setdatasupplier(response.data.data_supplier);
         } catch (error) {
             console.log(error);
@@ -195,7 +195,7 @@ export default function Home() {
 
 
             axios
-                .post(`https://api.epseugroup.com/v1/inputlistbelanja`, transformedData)
+                .post(`https://api.401snkrs.com/v1/inputlistbelanja`, transformedData)
                 .then(async function (response) {
                     const { success, message } = response.data.result;
                     if (success === true) {
@@ -227,7 +227,7 @@ export default function Home() {
             const matched = data_listbelanja.find((item: any) => item.id_pesanan === scanValue);
 
             if (matched) {
-                axios.post("https://api.epseugroup.com/v1/updateresi", {
+                axios.post("https://api.401snkrs.com/v1/updateresi", {
                     id_pesanan: matched.id_pesanan,
                     produk: matched.produk,
                     resi: "VALID"
@@ -419,7 +419,7 @@ export default function Home() {
                                         }
                                     });
 
-                                    axios.post("https://api.epseugroup.com/v1/insertmassal", mergedList)
+                                    axios.post("https://api.401snkrs.com/v1/insertmassal", mergedList)
                                         .then((res) => {
                                             console.log("Full response data:", res.data); // Debugging ✅
                                             if (res.data.result.result === "success") {
@@ -466,7 +466,7 @@ export default function Home() {
                                             return null;
                                         }
                                     }).filter(item => item !== null);
-                                    axios.post("https://api.epseugroup.com/v1/deletemassal_listbelanja", itemList)
+                                    axios.post("https://api.401snkrs.com/v1/deletemassal_listbelanja", itemList)
                                         .then((res) => {
                                             toast.success("Delete massal berhasil", {
                                                 position: toast.POSITION.TOP_RIGHT,
@@ -655,7 +655,7 @@ export default function Home() {
                                                                 onChange={(e) => {
                                                                     const selectedSupplier = e.target.value;
                                                                     if (selectedSupplier && selectedSupplier !== item.id_ware) {
-                                                                        axios.post("https://api.epseugroup.com/v1/updatesupplier", {
+                                                                        axios.post("https://api.401snkrs.com/v1/updatesupplier", {
                                                                             produk: item.produk,
                                                                             id_ware: selectedSupplier,
                                                                         })
@@ -685,7 +685,7 @@ export default function Home() {
                                                                     const selectedSupplier = e.target.value;
                                                                     // setaddsupplier(selectedSupplier);
                                                                     if (selectedSupplier && selectedSupplier !== "") {
-                                                                        axios.post("https://api.epseugroup.com/v1/updatesupplier", {
+                                                                        axios.post("https://api.401snkrs.com/v1/updatesupplier", {
                                                                             produk: item.produk,
                                                                             id_ware: selectedSupplier,
                                                                         })
@@ -721,7 +721,7 @@ export default function Home() {
                                                                 onChange={(e) => {
                                                                     const selectedStatus = e.target.value;
                                                                     if (selectedStatus && selectedStatus !== item.status) {
-                                                                        axios.post("https://api.epseugroup.com/v1/updatestatus", {
+                                                                        axios.post("https://api.401snkrs.com/v1/updatestatus", {
                                                                             id_pesanan: item.id_pesanan,
                                                                             produk: item.produk,
                                                                             status: selectedStatus,
@@ -754,7 +754,7 @@ export default function Home() {
                                                                 onChange={(e) => {
                                                                     const selectedStatus = e.target.value;
                                                                     if (selectedStatus && selectedStatus !== "") {
-                                                                        axios.post("https://api.epseugroup.com/v1/updatestatus", {
+                                                                        axios.post("https://api.401snkrs.com/v1/updatestatus", {
                                                                             id_pesanan: item.id_pesanan,
                                                                             produk: item.produk,
                                                                             status: selectedStatus,
@@ -818,7 +818,7 @@ export default function Home() {
                             </button>
                             <button
                                 onClick={() => {
-                                    axios.post("https://api.epseugroup.com/v1/updatemprice_listbelanja", {
+                                    axios.post("https://api.401snkrs.com/v1/updatemprice_listbelanja", {
                                         id_pesanan: selectedPriceItem.id_pesanan,
                                         produk: selectedPriceItem.produk,
                                         m_price: editPrice,
@@ -876,7 +876,7 @@ export default function Home() {
                             </button>
                             <button
                                 onClick={() => {
-                                    axios.post("https://api.epseugroup.com/v1/updateacc_listbelanja", {
+                                    axios.post("https://api.401snkrs.com/v1/updateacc_listbelanja", {
                                         id_pesanan: selectedAccItem.id_pesanan,
                                         produk: selectedAccItem.produk,
                                         acc: editAcc,
@@ -934,7 +934,7 @@ export default function Home() {
                                                 onClick={() => {
                                                     const newParam = prompt("Edit Parameter", param.parameter);
                                                     if (newParam && newParam !== param.parameter) {
-                                                        axios.post("https://api.epseugroup.com/v1/editparameter", {
+                                                        axios.post("https://api.401snkrs.com/v1/editparameter", {
                                                             parameters: [{ id: param.id, parameter: newParam }],
                                                         }).then(() => {
                                                             toast.success("Parameter berhasil diubah", { autoClose: 1000 });
@@ -951,7 +951,7 @@ export default function Home() {
                                             <button
                                                 onClick={() => {
                                                     if (confirm("Yakin hapus parameter ini?")) {
-                                                        axios.post("https://api.epseugroup.com/v1/deleteparameter", {
+                                                        axios.post("https://api.401snkrs.com/v1/deleteparameter", {
                                                             id: param.id,
                                                         }).then(() => {
                                                             toast.success("Parameter berhasil dihapus", { autoClose: 1000 });
@@ -982,7 +982,7 @@ export default function Home() {
                                         <button
                                             onClick={() => {
                                                 if (!addparameter) return;
-                                                axios.post("https://api.epseugroup.com/v1/addparameter", {
+                                                axios.post("https://api.401snkrs.com/v1/addparameter", {
                                                     parameters: [{ parameter: addparameter }],
                                                 }).then(() => {
                                                     toast.success("Parameter berhasil ditambahkan", { autoClose: 1000 });

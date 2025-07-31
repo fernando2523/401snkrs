@@ -32,7 +32,7 @@ export default function Home() {
     const [Password, setPassword]: any = useState("");
 
     async function updatePass() {
-        await axios.post(`https://api.epseugroup.com/v1/updatepassword`, {
+        await axios.post(`https://api.401snkrs.com/v1/updatepassword`, {
             id: id,
             password: Password,
         }).then(function (response) {
